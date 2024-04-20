@@ -1,0 +1,463 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+
+}
+
+
+.banner {
+  background: #a770ef;
+  background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #f3f3f3;
+  color: #000000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 0;
+  font-weight: bolder;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main content styles */
+#main-content {
+  padding: 20px 0;
+}
+
+/* Group picture styles */
+#group-picture {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-container img {
+  width: 200px;
+  margin: 10px;
+}
+
+/* Side panel styles */
+#side-panel {
+  background-color: #ccc;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .container {
+      padding: 0 10px;
+  }
+
+  header {
+      padding: 15px 0;
+  }
+
+  .menu li {
+      display: inline;
+      margin: 8px 8px;
+      
+  }
+
+  .image-container img {
+      width: 150px;
+  }
+}
+
+
+
+.album .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.album .responsive-container-block.bg {
+  max-width: 1320px;
+  margin: 0 0 0 0;
+  justify-content: space-between;
+}
+
+.album .img {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.album #i9rb {
+  color: black;
+}
+
+.album #ir6i {
+  color: black;
+}
+
+.album #ikz3b {
+  color: black;
+}
+
+.album .responsive-container-block.img-cont {
+  flex-direction: column;
+  max-width: 33.3%;
+  min-height: auto;
+  margin: 0 0 0 0;
+  height: 100%;
+}
+
+.album #ipix {
+  color: black;
+}
+
+.album #ipzoh {
+  color: black;
+}
+
+.album #ig5q8 {
+  color: black;
+}
+
+.album #imtzl {
+  color: black;
+}
+
+.album #i53es {
+  color: black;
+}
+
+.album .img.img-big {
+  height: 50%;
+  margin: 0 0 16px 0;
+}
+
+@media (max-width: 1024px) {
+  .album .img {
+    margin: 0 0 18px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .album .img {
+    max-width: 32.5%;
+    margin: 0 0 0 0;
+  }
+
+  .album .responsive-container-block.bg {
+    flex-direction: column;
+  }
+
+  .album .responsive-container-block.img-cont {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .album .img.img-big {
+    max-width: 49%;
+    margin: 0 0 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .album .img {
+    max-width: 94%;
+    margin: 0 0 25px 0;
+  }
+
+  .album .responsive-container-block.img-cont {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .album .img.img-big {
+    max-width: 94%;
+    margin: 0 0 25px 0;
+  }
+
+  .album .img.img-last {
+    margin: 0 0 5px 0;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 20px; /* Adjust the width as needed */
+  margin-right: 10px; /* Add space between the logo and brand name */
+}
+
+.brand-name {
+  font-size: 14px; /* Adjust the font size as needed */
+  font-weight: bold;
+}

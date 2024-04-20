@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Level Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Memory Matching Game - Third Level</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="friends.html">Friends</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="game.html">Play Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="game-board">
+        <div class="container">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Define an array to hold the card values
+        const cardValues = ['🌟', '🌟', '🌸', '🌸', '🍀', '🍀', '🦄', '🦄', '🎈', '🎈', '🎁', '🎁', '🎲', '🎲', '🎉', '🎉',
+                            '🌼', '🌼', '🌈', '🌈', '🐬', '🐬', '🍕', '🍕', '🍭', '🍭', '🎸', '🎸', '🚀', '🚀', '🚢', '🚢'];
+
+        // Shuffle function to randomize card values
+        function shuffle(array) {
+            let currentIndex = array.length, temporaryValue, randomIndex;
+
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        // Function to create the game board
+        function createGameBoard() {
+            const shuffledValues = shuffle(cardValues);
+
+            const gameBoard = document.querySelector('#game-board .container');
+
+            shuffledValues.forEach(value => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.value = value;
+                card.textContent = value;
+                card.addEventListener('click', handleCardClick);
+                gameBoard.appendChild(card);
+            });
+        }
+
+        // Function to handle card click event
+        let firstCard = null;
+        let secondCard = null;
+        let canClick = true;
+        let matchedPairs = 0;
+        let startTime = Date.now();
+
+        function handleCardClick(event) {
+            if (!canClick) return;
+            const clickedCard = event.target;
+
+            if (!firstCard) {
+                firstCard = clickedCard;
+                firstCard.classList.add('flipped');
+            } else if (firstCard && !secondCard && firstCard !== clickedCard) {
+                secondCard = clickedCard;
+                secondCard.classList.add('flipped');
+                checkMatch();
+            }
+        }
+
+        // Function to check if two cards match
+        function checkMatch() {
+            canClick = false;
+            setTimeout(() => {
+                if (firstCard.dataset.value === secondCard.dataset.value) {
+                    firstCard.removeEventListener('click', handleCardClick);
+                    secondCard.removeEventListener('click', handleCardClick);
+                    matchedPairs++;
+                    if (matchedPairs === cardValues.length / 2) {
+                        showWinAlert();
+                    }
+                } else {
+                    firstCard.classList.remove('flipped');
+                    secondCard.classList.remove('flipped');
+                }
+                firstCard = null;
+                secondCard = null;
+                canClick = true;
+            }, 1000);
+        }
+
+        // Function to display win alert
+        function showWinAlert() {
+            const endTime = Date.now();
+            const elapsedTime = (endTime - startTime) / 1000;
+            const score = calculateScore(elapsedTime);
+            alert(`Congratulations! You have matched all the pairs in ${elapsedTime} seconds! Your score is ${score}. Moving to the next level.`);
+            moveToNextLevel();
+        }
+
+        // Function to calculate score based on completion time
+        function calculateScore(elapsedTime) {
+            // You can adjust the scoring algorithm as needed
+            const baseScore = 1000; // Base score for completing the game
+            const timePenalty = Math.floor(elapsedTime * 10); // Penalty for time taken
+            return Math.max(baseScore - timePenalty, 0);
+        }
+
+        // Function to move to the next level
+        function moveToNextLevel() {
+            // Redirect the user to the next level page
+            window.location.href = "game.html";
+        }
+
+        // Initialize the game board
+        createGameBoard();
+    </script>
+</body>
+</html>
